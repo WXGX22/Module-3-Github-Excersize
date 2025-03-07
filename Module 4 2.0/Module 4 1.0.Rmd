@@ -1,0 +1,96 @@
+---
+title: "Module 4 - Wes Gordon"
+output:
+  html_document: default
+  pdf_document: default
+---
+#Puppy Fever
+###How many puppies can I buy?
+
+I have puppy fever and I want to get as many puppies I can without spending over $1,000.
+Calculate how many puppies I can buy based on the market price found online.  Based on my calculations I can get 2 puppies for $700.  I almost could get one more but am $50 short.  
+
+```{r 
+Calculate how many puppies I can buy:
+
+x <- 1000 #Budget Variable
+y <- 200 #Puppy Price Variable
+
+#The price for each puppy
+puppy_price <- y 
+print(puppy_price)
+
+#Calculates the total cost of puppies
+total_cost <- max_puppies * puppy_price 
+print(total_cost)
+
+#Logical test to show if purchase is too expensive
+too_expensive <- total_cost > x 
+print(too_expensive)
+  
+#Calculates the max amount of puppies I can get      
+max_puppies <- floor( x / puppy_price) 
+print(max_puppies)
+```
+#Part 2
+#ID Tags
+###ID tags for team
+
+I am making name tags for our team.
+```{r 
+print(my_name <- c("Wesley Gordon"))
+class(my_name <- c("Wesley Gordon"))
+
+print(my_height <- "77 inches")
+class(my_height <- "77 inches")
+
+print(favorite_day <- as.Date("2025-07-04"))
+class(favorite_day <- as.Date("2025-07-04"))
+
+print(favorite_quote <- "Failure to prepare is preparing to fail")
+class(favorite_quote <- "Failure to prepare is preparing to fail")
+nchar("Failure to prepare is preparing to fail.")
+
+#Class shows character despite my_height being numeric.
+print(id <- c(my_name, my_height, favorite_day, favorite_quote))
+class(id <- c(my_name, my_height, favorite_day, favorite_quote)) 
+
+cat(id <- c(my_name, my_height, favorite_day, favorite_quote))
+paste(id <- c(my_name, my_height, favorite_day, favorite_quote))
+
+cat(paste(id <- c(my_name, my_height, favorite_day, favorite_quote)))
+paste(cat(id <- c(my_name, my_height, favorite_day, favorite_quote)))
+
+paste(id <- c(my_name, my_height, favorite_day, favorite_quote), collapse=', ')
+paste(id <- c(my_name, my_height, favorite_day, favorite_quote, sep=', '))
+
+
+cat(paste(my_name,my_height,favorite_day,favorite_quote, sep='_'))
+```
+```{r 
+```
+Try using cat and paste with id as a function argument. How do the results differ? What happens when we use cat and paste at the same time (i.e. f(g(x)))? What happens if we change the order we use them (i.e. g(f(x)))?
+```{r 
+#CAT combines the vector into one line of characters separated by spaces. 
+cat(id <- c(my_name, my_height, favorite_day, favorite_quote))
+Wesley Gordon 77 inches 20273 Failure to prepare is preparing to fail.
+
+PASTE changes the order by putting them in numbered rows/columns.  Each character string has quotations around them.  Using them at the same time, the first command directs the output.  
+
+If CAT precedes Paste it will execute CAT, and the inverse also applys.
+
+```
+
+
+How would you determine the difference between cat and paste using R documentation (from within RStudio)? What is a great internet resource to use as discussed in the book?
+#-Right in R Console I can type the command and formula help will display.  A great internet resource is Google searching "how to do_thing in R".  Also StackOverflow is a robust Q&A forum covering all things R programming.
+
+What do sep and collapse arguments for paste do? If we wanted to append each character variable in our vector id with a new line (i.e. "\n") would we use sep or collapse?
+#SEP from what I can see does nothing.  COLLAPSE can be used to be used to add commas after each word. 
+
+Display the contents of id using a combination of cat and paste with the appropriate arguments for paste.
+```{r
+cat(paste(my_name,my_height,favorite_day,favorite_quote, sep='_'))
+Wesley Gordon_77 inches_2025-07-04_Failure to prepare is preparing to fail.
+
+```

@@ -1,0 +1,57 @@
+---
+title: "Module 4 - Wes Gordon"
+output:
+  pdf_document: default
+  html_document: default
+---
+#Puppy Fever
+###How many puppies can I buy?
+
+I have puppy fever and I want to get as many puppies I can without spending over $1,000.
+Calculate how many puppies I can buy based on the market price found online.  Based on my calculations I can get 2 puppies for $700.  I almost could get one more but am $50 short.  
+
+```{r 
+Calculate how many puppies I can buy:
+
+x <- 1000 #Budget Variable
+y <- 200 #Puppy Price Variable
+
+puppy_price <- y #The price for each puppy
+  print(puppy_price)
+
+total_cost <- max_puppies * puppy_price #Calculates the cost
+  print(total_cost)
+
+too_expensive <- total_cost > x #Logical test to show if purchase is too expensive
+  print(too_expensive)
+      
+max_puppies <- floor( x / puppy_price) #Calculates the max amount of puppies I can get
+  print(max_puppies)
+```
+#ID Tags
+###ID tags for team
+
+I am making name tags for our team.
+```{r 
+print(my_name <- c("Wes", "Wesley", "Wes Gordon", "Wesley Gordon"))
+class(my_name <- c("Wes", "Wesley", "Wes Gordon", "Wesley Gordon"))
+
+print(my_height <- 77')
+class(my_height <- 77')
+
+print(favorite_day <- as.Date("2025-07-04"))
+class(favorite_day <- as.Date("2025-07-04"))
+
+print(favorite_quote <- "Failure to prepare is preparing to fail.")
+class(favorite_quote <- "Failure to prepare is preparing to fail.")
+nchar("Failure to prepare is preparing to fail.")
+
+print(id <- c(my_name, my_height, favorite_day, favorite_quote))
+class(id <- c(my_name, my_height, favorite_day, favorite_quote)) #Class shows character despite my_height being numeric.
+
+cat(id <- c(my_name, my_height, favorite_day, favorite_quote))
+paste(id <- c(my_name, my_height, favorite_day, favorite_quote))
+cat(paste(id <- c(my_name, my_height, favorite_day, favorite_quote)))
+paste(cat(id <- c(my_name, my_height, favorite_day, favorite_quote)))
+
+```
