@@ -1,0 +1,172 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={Module 4 - Wes Gordon},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{Module 4 - Wes Gordon}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\section{Puppy Fever}\label{puppy-fever}
+
+\subsubsection{How many puppies can I
+buy?}\label{how-many-puppies-can-i-buy}
+
+I have puppy fever and I want to get as many puppies I can without
+spending over \$1,000. Calculate how many puppies I can buy based on the
+market price found online. Based on my calculations I can get 2 puppies
+for \$700. I almost could get one more but am \$50 short.
+
+\begin{verbatim}
+Calculate how many puppies I can buy:
+
+x <- 1000 #Budget Variable
+y <- 200 #Puppy Price Variable
+
+#The price for each puppy
+puppy_price <- y 
+print(puppy_price)
+
+#Calculates the total cost of puppies
+total_cost <- max_puppies * puppy_price 
+print(total_cost)
+
+#Logical test to show if purchase is too expensive
+too_expensive <- total_cost > x 
+print(too_expensive)
+  
+#Calculates the max amount of puppies I can get      
+max_puppies <- floor( x / puppy_price) 
+print(max_puppies)
+\end{verbatim}
+
+\section{Part 2}\label{part-2}
+
+\section{ID Tags}\label{id-tags}
+
+\subsubsection{ID tags for team}\label{id-tags-for-team}
+
+I am making name tags for our team.
+
+\begin{verbatim}
+print(my_name <- c("Wesley Gordon"))
+class(my_name <- c("Wesley Gordon"))
+
+print(my_height <- "77 inches")
+class(my_height <- "77 inches")
+
+print(favorite_day <- as.Date("2025-07-04"))
+class(favorite_day <- as.Date("2025-07-04"))
+
+print(favorite_quote <- "Failure to prepare is preparing to fail")
+class(favorite_quote <- "Failure to prepare is preparing to fail")
+nchar("Failure to prepare is preparing to fail.")
+
+#Class shows character despite my_height being numeric.
+print(id <- c(my_name, my_height, favorite_day, favorite_quote))
+class(id <- c(my_name, my_height, favorite_day, favorite_quote)) 
+
+cat(id <- c(my_name, my_height, favorite_day, favorite_quote))
+paste(id <- c(my_name, my_height, favorite_day, favorite_quote))
+
+cat(paste(id <- c(my_name, my_height, favorite_day, favorite_quote)))
+paste(cat(id <- c(my_name, my_height, favorite_day, favorite_quote)))
+
+paste(id <- c(my_name, my_height, favorite_day, favorite_quote), collapse=', ')
+paste(id <- c(my_name, my_height, favorite_day, favorite_quote, sep=', '))
+
+
+cat(paste(my_name,my_height,favorite_day,favorite_quote, sep='_'))
+\end{verbatim}
+
+Try using cat and paste with id as a function argument. How do the
+results differ? What happens when we use cat and paste at the same time
+(i.e.~f(g(x)))? What happens if we change the order we use them
+(i.e.~g(f(x)))? \#-CAT combines the vector into one line of characters
+separated by spaces. PASTE changes the order by putting them in numbered
+rows/columns. Each character string has quotations around them. Using
+them at the same time, the first command directs the output. If CAT
+precedes Paste it will execute CAT, and the inverse also applys.
+
+How would you determine the difference between cat and paste using R
+documentation (from within RStudio)? What is a great internet resource
+to use as discussed in the book? \#-Right in R Console I can type the
+command and formula help will display. A great internet resource is
+Google searching ``how to do\_thing in R''. Also StackOverflow is a
+robust Q\&A forum covering all things R programming.
+
+What do sep and collapse arguments for paste do? If we wanted to append
+each character variable in our vector id with a new line (i.e. ``\n'')
+would we use sep or collapse? \#SEP from what I can see does nothing.
+COLLAPSE can be used to be used to add commas after each word.
+
+Display the contents of id using a combination of cat and paste with the
+appropriate arguments for paste.
+\#cat(paste(my\_name,my\_height,favorite\_day,favorite\_quote,
+sep='\_'))
+
+\end{document}
